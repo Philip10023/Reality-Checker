@@ -16,6 +16,8 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'foundation-rails'
 gem 'devise'
+gem 'cowsay'
+gem 'coveralls', require: false
 
 group :development, :test do
   gem 'pry-rails'
@@ -29,6 +31,10 @@ end
 
 group :development, :test do
   gem 'byebug', platform: :mri
+end
+
+group :test do
+  gem 'coveralls', require: false
 end
 
 group :development do

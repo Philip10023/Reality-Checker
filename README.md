@@ -23,3 +23,7 @@ Things you may want to cover:
 HI
 * ...
 # Reality-Checker
+
+![Build Status](https://codeship.com/projects/<YOUR_PROJECT_UUID>/status?branch=master)
+![Code Climate](https://codeclimate.com/github/philip10023/Reality-Checker.png)
+![Coverage Status](https://coveralls.io/repos/philip10023/Reality-Checker/badge.png)
