@@ -16,6 +16,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'foundation-rails'
 gem 'devise'
+gem 'cowsay'
 
 group :development, :test do
   gem 'pry-rails'
