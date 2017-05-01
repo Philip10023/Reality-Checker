@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     authenticated :user do
       root to: 'categories#index', as: :authenticated_root
-      resources :categories, only: [:index]
+      resources :categories, only: [:index, :new, :show]
     end
 
     unauthenticated do
