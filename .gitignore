@@ -15,7 +15,6 @@
 !/tmp/.keep
 .DS_Store
 
-.env
 /.bundle
 
 # Ignore all logfiles and tempfiles.
@@ -24,14 +23,13 @@
 !/log/.keep
 !/tmp/.keep
 /coverage
-.env
 .DS_Store
 /app/assets/javascripts/bundle.js
 # Ignore Byebug command history file.
 .byebug_history
 
 # Ignore environment variables
-.env
+
 
 # Ignore local uploads
 /public/uploads
