@@ -1,0 +1,2 @@
+class Reality_checksController < ApplicationController
+end

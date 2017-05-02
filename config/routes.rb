@@ -7,6 +7,17 @@ Rails.application.routes.draw do
       resources :categories, only: [:index, :new, :show, :create]
     end
 
+    resources :reality_checks
+
+    namespace :api do
+      namespace :v1 do
+        resources :reality_checks, only: [:index, :create]
+        resources :categories
+      end
+    end
+
+    resources :categories
+
     unauthenticated do
       root 'devise/sessions#new', as: :unauthenticated_root
     end
