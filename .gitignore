@@ -27,7 +27,7 @@
 /app/assets/javascripts/bundle.js
 # Ignore Byebug command history file.
 .byebug_history
-
+/node_modules
 # Ignore environment variables
 
 

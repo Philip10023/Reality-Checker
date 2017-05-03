@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Retro Game Reviews" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Reality-Checker" %></title>
 
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -29,6 +29,21 @@
         </div>
       </div>
   </div>
+  <div class="top-bar-right">
+    <ul class="menu">
+      <li class="has-form search-bar">
+        <%= form_tag categories_path, method: :get do %>
+          <%= submit_tag "Search Categories" %>
+          <%= text_field_tag :query %>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+  <div class="row column main">
     <%= yield %>
-  </body>
+    </body>
+  </div>
 </html>

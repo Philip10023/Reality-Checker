@@ -1,6 +1,10 @@
 class CategoriesController < ApplicationController
   def index
-    @categories = Category.all
+    if Category.search(params[:query])
+      @categories = Category.search(params[:query])
+    else
+      @categories = Category.all
+    end
   end
 
   def new
