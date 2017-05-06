@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
     namespace :api do
       namespace :v1 do
-        resources :reality_checks, only: [:index, :create]
+        resources :reality_checks, only: [:index, :create, :show]
         resources :categories
       end
     end

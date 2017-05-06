@@ -22,14 +22,14 @@ ActiveRecord::Schema.define(version: 20170502144325) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "reality_checks", force: :cascade do |t|
+  create_table "realitychecks", force: :cascade do |t|
     t.string   "check",       null: false
     t.integer  "user_id"
     t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["category_id"], name: "index_reality_checks_on_category_id", using: :btree
-    t.index ["user_id"], name: "index_reality_checks_on_user_id", using: :btree
+    t.index ["category_id"], name: "index_realitychecks_on_category_id", using: :btree
+    t.index ["user_id"], name: "index_realitychecks_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
