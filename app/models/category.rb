@@ -7,5 +7,6 @@ class Category < ApplicationRecord
   pg_search_scope :search_category_only, against: [:title, :description]
   scope :search, ->(query) { search_category_only(query) if query.present? }
 
-  has_many :realitychecks
+  has_many :realities
+
 end

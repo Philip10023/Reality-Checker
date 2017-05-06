@@ -7,11 +7,11 @@ Rails.application.routes.draw do
       resources :categories, only: [:index, :new, :show, :create]
     end
 
-    resources :reality_checks
+    resources :realities
 
     namespace :api do
       namespace :v1 do
-        resources :reality_checks, only: [:index, :create, :show]
+        resources :realities, only: [:index, :create, :show]
         resources :categories
       end
     end

@@ -5,7 +5,7 @@ class ArrowContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      reality_check: '',
+      reality: '',
       ids: [],
       id_counter: [],
       clicks: null,
@@ -13,7 +13,7 @@ class ArrowContainer extends Component {
     this.clickHandler=this.clickHandler.bind(this)
   }
   componentDidMount(){
-    fetch('/api/v1/reality_checks')
+    fetch('/api/v1/realities')
     .then(response => response.json())
     .then(responseData => {
       let id_container = []
@@ -27,13 +27,13 @@ class ArrowContainer extends Component {
 
   clickHandler() {
     let clicks = this.state.clicks
-    let realityCheckIds = this.state.ids
-    let randomId = realityCheckIds[Math.floor(Math.random()*realityCheckIds.length)]
-    fetch(`/api/v1/reality_checks/${randomId}`, {
+    let realityIds = this.state.ids
+    let randomId = realityIds[Math.floor(Math.random()*realityIds.length)]
+    fetch(`/api/v1/realities/${randomId}`, {
     })
     .then(response => response.json())
     .then(responseData => {
-      this.setState({ reality_check: responseData.check })
+      this.setState({ reality: responseData.check })
       this.setState({ id_counter: responseData.id })
       this.setState({ clicks: clicks+=1 })
     })
@@ -41,13 +41,13 @@ class ArrowContainer extends Component {
   render(){
       return(
         <div>
-          {this.state.reality_check}
+          {this.state.reality}
           <button>
-            <a href="javascript:location.reload(true)">Save your reality checks!</a>
+            <a href="javascript:location.reload(true)">Save your realities!</a>
           </button>
         <button>
           <Arrow className="arrow"
-            reality_check={this.state.reality_check}
+            reality={this.state.reality}
             clickHandler={this.clickHandler}
             />
         </button>

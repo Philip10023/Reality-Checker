@@ -8,7 +8,7 @@ class CheckShowContainer extends Component {
       check: null,
       user: null,
     }
-    this.addNewRealityCheck = this.addNewRealityCheck.bind(this)
+    this.addNewReality = this.addNewReality.bind(this)
   }
 
   componentDidMount() {
@@ -24,8 +24,8 @@ class CheckShowContainer extends Component {
         })
       })
   }
-  addNewRealityCheck(payload) {
-    fetch("/api/v1/reality_checks.json", {
+  addNewReality(payload) {
+    fetch("/api/v1/realities.json", {
       credentials: 'same-origin',
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -36,7 +36,7 @@ class CheckShowContainer extends Component {
     return(
 
       <FormContainer
-       addNewRealityCheck={this.addNewRealityCheck}
+       addNewReality={this.addNewReality}
        categoryId={this.props.params.id}/>
     )
   }

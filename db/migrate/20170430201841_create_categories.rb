@@ -3,7 +3,7 @@ class CreateCategories < ActiveRecord::Migration[5.0]
     create_table :categories do |t|
       t.string :title, null: false
       t.string :description
-      t.has_many :reality_checks
+      t.belongs_to :user
 
       t.timestamps
     end

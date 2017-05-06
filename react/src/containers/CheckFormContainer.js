@@ -43,7 +43,7 @@ constructor(props) {
       };
       if (this.validateCheck(formPayload.check)){
 
-        this.props.addNewRealityCheck(formPayload);
+        this.props.addNewReality(formPayload);
         this.handleClearForm(event);
       }
 
