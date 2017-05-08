@@ -1,0 +1,14 @@
+button {
+  float: left;
+}
+a {
+  color: #424242 !important;
+}
+
+a:hover {
+  background-color: #BCBCBC !important;
+}
+
+/*.arrow{
+  background-color: #BCBCBC !important;
+}*/
