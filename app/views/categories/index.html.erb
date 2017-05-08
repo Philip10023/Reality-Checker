@@ -5,12 +5,7 @@
   <h2>Categories:</h2>
   <div class="categories small-9 columns small-centered large-10">
     <% @categories.each do |category| %>
-      <%if current_user.admin? %>
-        <span class='animated slideInLeft categories'><%= link_to game.title, category %>
-        <!-- <div><%= link_to "delete", game, method: :delete, data: { confirm: "You sure?" } %></div> </span> -->
-       <%else%>
-        <p class='animated slideInLeft categories'><%= link_to category.title, category %></p>
-       <%end%>
+      <p class='animated slideInLeft categories'><%= link_to category.title, category %></p>  
     <% end %>
   </div>
 </div>

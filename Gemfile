@@ -17,6 +17,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'foundation-rails'
 gem 'devise'
 gem 'cowsay'
+gem 'pg_search'
 gem 'coveralls', require: false
 
 group :development, :test do
