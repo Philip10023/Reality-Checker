@@ -33,7 +33,6 @@ class ArrowContainer extends Component {
     ids.push(reality.id))
     console.log(realityIds)
     let randomId = realityIds[Math.floor(Math.random()*realityIds.length)]
-    console.log(randomId)
       this.setState({ reality: this.state.realities[0].realities[randomId-1].check })
   }
   render(){
