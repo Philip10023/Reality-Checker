@@ -90,7 +90,9 @@ constructor(props) {
           </div>
         </form>
         <
-        ArrowContainer/>
+        ArrowContainer
+        categoryId = {this.props.categoryId}
+        checkConsumed = {this.props.checkConsumed}/>
       </div>
     );
   }

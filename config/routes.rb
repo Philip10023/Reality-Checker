@@ -5,16 +5,16 @@ Rails.application.routes.draw do
     authenticated :user do
       root to: 'categories#index', as: :authenticated_root
       resources :categories, only: [:index, :new, :show, :create]
-    end
+      resources :realities, only: [:index, :destroy]
 
-    resources :realities
 
     namespace :api do
       namespace :v1 do
-        resources :realities, only: [:index, :create, :show]
-        resources :categories
+        resources :categories, only: [:show]
+        resources :realities, only: [:create, :update]
       end
     end
+  end
 
     resources :categories
 

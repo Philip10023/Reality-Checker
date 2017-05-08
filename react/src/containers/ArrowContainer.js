@@ -5,38 +5,36 @@ class ArrowContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      realities: [],
       reality: '',
       ids: [],
-      id_counter: [],
-      clicks: null,
+      id_counter: []
     }
     this.clickHandler=this.clickHandler.bind(this)
   }
   componentDidMount(){
-    fetch('/api/v1/realities')
+    let categoryId = this.props.categoryId
+    fetch(`/api/v1/categories/${categoryId}`, {
+      credentials: 'same-origin',
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' }
+    })
     .then(response => response.json())
     .then(responseData => {
-      let id_container = []
-      responseData.map(object => {
-        id_container.push( object.id )
-      })
-      this.setState({ ids: id_container })
+      this.setState({ realities: [responseData] })
+      console.log(responseData);
     })
-  }
+}
 
 
   clickHandler() {
-    let clicks = this.state.clicks
-    let realityIds = this.state.ids
+    let ids = [];
+    let realityIds = this.state.realities[0].realities.map(reality =>
+    ids.push(reality.id))
+    console.log(realityIds)
     let randomId = realityIds[Math.floor(Math.random()*realityIds.length)]
-    fetch(`/api/v1/realities/${randomId}`, {
-    })
-    .then(response => response.json())
-    .then(responseData => {
-      this.setState({ reality: responseData.check })
-      this.setState({ id_counter: responseData.id })
-      this.setState({ clicks: clicks+=1 })
-    })
+    console.log(randomId)
+      this.setState({ reality: this.state.realities[0].realities[randomId-1].check })
   }
   render(){
       return(
@@ -51,9 +49,6 @@ class ArrowContainer extends Component {
             clickHandler={this.clickHandler}
             />
         </button>
-          <div>
-            {this.state.clicks}
-          </div>
         </div>
       )
     }

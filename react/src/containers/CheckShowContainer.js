@@ -5,8 +5,9 @@ class CheckShowContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      realities: [],
       check: null,
-      user: null,
+      user: null
     }
     this.addNewReality = this.addNewReality.bind(this)
   }
@@ -25,11 +26,16 @@ class CheckShowContainer extends Component {
       })
   }
   addNewReality(payload) {
-    fetch("/api/v1/realities.json", {
+    fetch("/api/v1/realities", {
       credentials: 'same-origin',
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
+    })
+    .then(response => response.json())
+    .then(responseData => {
+      console.log(responseData.realities)
+      this.setState({ realities: [...this.state.realities, responseData.realities] })
     })
   }
   render(){
