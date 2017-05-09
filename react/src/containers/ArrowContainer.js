@@ -38,13 +38,12 @@ class ArrowContainer extends Component {
   render(){
       return(
         <div>
-          {this.state.reality}
+            <div>{this.state.reality}</div>
           <button>
             <a href="javascript:location.reload(true)">Save your realities!</a>
           </button>
         <button>
           <Arrow className="arrow"
-            reality={this.state.reality}
             clickHandler={this.clickHandler}
             />
         </button>

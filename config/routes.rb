@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :views
+  devise_for :users, controllers: { registrations: "registrations" }
 
   devise_scope :user do
     authenticated :user do
       root to: 'categories#index', as: :authenticated_root
       resources :categories, only: [:index, :new, :show, :create]
       resources :realities, only: [:index, :destroy]
-
+      resources :timers, only: [:show, :update, :create]
 
     namespace :api do
       namespace :v1 do
