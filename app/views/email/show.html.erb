@@ -1,0 +1,8 @@
+<h1> Choose the times you want reality checks sent!<h1>
+<%= form_for @timer = Timer.find_or_initialize_by[:id] do |f| %>
+
+    <%= f.label :from %><br>
+    <%= f.select :from, [ 1, 5, 12 ], :prompt => 'Select hourly rate' %>
+
+    <%= f.submit %>
+<% end %>

@@ -8,5 +8,6 @@ class Category < ApplicationRecord
   scope :search, ->(query) { search_category_only(query) if query.present? }
 
   has_many :realities
+  has_many :timers
 
 end

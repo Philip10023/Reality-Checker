@@ -1,44 +1,41 @@
 class TimersController < ApplicationController
-  def create
+  skip_before_action :verify_authenticity_token
 
-    @timer = Timer.new(timer_params)
+  def create
+    @category = Category.find(params[:category_id])
+    @timer = Timer.new
+    @timer.category = @category
+    @timer.user = current_user
+    @timer.update_attributes(timer_params)
     if @timer.save
       flash[:notice] = 'Timer successfully created!'
-      redirect_to timer_path
+      redirect_to categories_path(@category)
     else
       render action: 'new'
     end
   end
   def show
     @timer = Timer.find(params[:id])
+    @category = @timer.category
+    user_rate = @timer.rate
   end
   def new
       @timer = Timer.new
+      @category = Category.find(params[:category_id])
   end
   def update
-  timer = Timer.find(params[:id])
-  if !timer
-    new_timer = Timer.new(
-      rate: timer_params[:rate]
-    )
-    if new_timer.valid?
-      new_rate.save
-      render json: {
-        status: 201,
-        message: "You changed your rating!",
-        reviews: timer_params
-      }.to_json
-    else
-      render json: {
-        status: 500,
-        error: new_timer.errors.full_messages
-      }.to_json, status: :bad_request
-    end
+    timer = Timer.find(params[:id])
+    timer.rate = timer_params[:rate]
+    @user_rate = timer.rate
+
+    timer.save
+
+    redirect_to categories_path
   end
 
-  end
   private
+
   def timer_params
-    params.require(:timer).permit(:rate, :category_id)
+    params.require(:timer).permit(:rate)
   end
 end
