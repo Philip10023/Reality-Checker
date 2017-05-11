@@ -8,7 +8,8 @@ class ArrowContainer extends Component {
       realities: [],
       reality: '',
       ids: [],
-      id_counter: []
+      id_counter: [],
+      id: ''
     }
     this.favoriteReality=this.favoriteReality.bind(this)
     this.clickHandler=this.clickHandler.bind(this)
@@ -27,17 +28,21 @@ class ArrowContainer extends Component {
     })
 }
   favoriteReality() {
-    fetch("/api/v1/user_favorite_realities", {
+    let payload = JSON.stringify({
+      favreality: this.state.reality,
+      user_id: this.props.current_user,
+      reality_id: this.state.id
+    });
+    fetch("/api/v1/favorites", {
       credentials: 'same-origin',
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(this.state.reality)
+      body: payload
     })
     .then(response => response.json())
     .then(responseData => {
       console.log(responseData);
     })
-
   }
 
 
@@ -47,6 +52,7 @@ class ArrowContainer extends Component {
     ids.push(reality.id))
     console.log(realityIds)
     let randomId = realityIds[Math.floor(Math.random()*realityIds.length)]
+      this.setState({ id: this.state.realities[0].realities.randomId})
       this.setState({ reality: this.state.realities[0].realities[randomId-1].check })
   }
   render(){

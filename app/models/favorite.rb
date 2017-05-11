@@ -4,4 +4,5 @@ class Favorite < ApplicationRecord
 
   belongs_to :reality
   belongs_to :user
+
 end
