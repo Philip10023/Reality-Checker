@@ -2,7 +2,8 @@
 #
 # It's helpful, but not entirely necessary to understand cron before proceeding.
 # http://en.wikipedia.org/wiki/Cron
-
+require 'rufus-scheduler'
+s = Rufus::Scheduler.singleton
 # Example:
 #
 # set :output, "/path/to/my/cron_log.log"
@@ -18,3 +19,9 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+if @timer.created? do
+  binding.pry
+  s.every `#{@user_rate}h` do
+    UserMailer.category_email(@user).deliver
+  end
+end

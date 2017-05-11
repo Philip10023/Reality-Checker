@@ -1,0 +1,25 @@
+.top-bar {
+  font-family: 'Indie Flower', cursive;
+  font-weight: bold;
+}
+ .reality-checker {
+   font-family: 'Indie Flower', cursive;
+   font-weight: bold;
+   text-align: center;
+ }
+
+ .category-title {
+   font-family: 'Indie Flower', cursive;
+   font-weight: bold;
+   text-align: center;
+ }
+
+.field {
+  font-family: 'Indie Flower', cursive;
+  font-weight: bolder;
+}
+
+.menu-icon {
+  height: 4em;
+  width: auto;
+}

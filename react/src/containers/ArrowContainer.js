@@ -8,8 +8,10 @@ class ArrowContainer extends Component {
       realities: [],
       reality: '',
       ids: [],
-      id_counter: []
+      id_counter: [],
+      id: ''
     }
+    this.favoriteReality=this.favoriteReality.bind(this)
     this.clickHandler=this.clickHandler.bind(this)
   }
   componentDidMount(){
@@ -25,6 +27,23 @@ class ArrowContainer extends Component {
       console.log(responseData);
     })
 }
+  favoriteReality() {
+    let payload = JSON.stringify({
+      favreality: this.state.reality,
+      user_id: this.props.current_user,
+      reality_id: this.state.id
+    });
+    fetch("/api/v1/favorites", {
+      credentials: 'same-origin',
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: payload
+    })
+    .then(response => response.json())
+    .then(responseData => {
+      console.log(responseData);
+    })
+  }
 
 
   clickHandler() {
@@ -33,19 +52,22 @@ class ArrowContainer extends Component {
     ids.push(reality.id))
     console.log(realityIds)
     let randomId = realityIds[Math.floor(Math.random()*realityIds.length)]
+      this.setState({ id: this.state.realities[0].realities.randomId})
       this.setState({ reality: this.state.realities[0].realities[randomId-1].check })
   }
   render(){
       return(
         <div>
-            <div>{this.state.reality}</div>
-          <button>
-            <a href="javascript:location.reload(true)">Save your realities!</a>
-          </button>
+            <div className= "realities">{this.state.reality}</div>
         <button>
           <Arrow className="arrow"
             clickHandler={this.clickHandler}
             />
+        </button>
+
+        <div onClick={this.favoriteReality} > Save To Your Favorites! </div>
+        <button className="reload">
+        <a className="reload" href="javascript:location.reload(true)">Save your submitted realities!</a>
         </button>
         </div>
       )

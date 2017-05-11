@@ -1,12 +1,16 @@
-button {
-  float: left;
+.reload {
+  color: #424242;
+  font-size: 30px;
+  float: right;
 }
 a {
-  color: #424242 !important;
+  color: #424242;
+  font-size: 30px
 }
 
 a:hover {
-  background-color: #BCBCBC !important;
+  font-family: 'Indie Flower', cursive;
+
 }
 
 /*.arrow{

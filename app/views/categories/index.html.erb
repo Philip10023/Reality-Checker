@@ -1,11 +1,14 @@
+<%= link_to categories_path do %>
+<%= image_tag("logo.png", class: "menu-icon") %>
+<%end%>
+<h2 class="category-title">Categories:</h2>
 <h1 class="reality-checker">Reality-Checker!</h1>
 
 
 <div class="category_header">
-  <h2>Categories:</h2>
   <div class="categories small-9 columns small-centered large-10">
     <% @categories.each do |category| %>
-      <p class='animated slideInLeft categories'><%= link_to category.title, category %></p>  
+      <p class='animated slideInLeft categories'><%= link_to category.title, category %></p>
     <% end %>
   </div>
 </div>

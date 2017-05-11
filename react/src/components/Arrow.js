@@ -4,8 +4,8 @@ const Arrow = (props) => {
   return (
     <div>
 
-      <div className="arrow" onClick={props.clickHandler}>
-        <p>Click Me</p>
+      <div className="click" onClick={props.clickHandler}>
+        <p>Receive A Reality!</p>
       </div>
       <div>{props.reality}</div>
     </div>

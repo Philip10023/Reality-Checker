@@ -1,9 +1,21 @@
 <div class="category-details">
-  <h1><%= @category.title %></h1>
-  <h2><%= @category.title %>'s email scheduler!</h2><p><%= link_to "Timer", timer_path %></p>
-  <div class="game-description">
-    <h3>Description: <%= @category.description %></h3>
+  <div class="description">
+    <h1 class="title"><%= @category.title %></h1>
+    <h3 class= "title">Description: <%= @category.description %></h3>
+  </div>
+
+
+  <div class="border">
+    <h2 class="email"><%= @category.title %>'s email scheduler!</h2>
+    <% if @category.timers === [] %>
+    <p class="timer"><%= link_to "Timer new", new_category_timer_path(@category) %></p>
+    <% else %>
+    <p class="timer"><%= link_to "Timer", category_timer_path(@category) %></p>
+    <% end %>
   </div>
 </div>
+<%= link_to categories_path do %>
+<%= image_tag("logo.png", class: "menu-icon") %>
+<% end %>
 
 <div id="react" data-currentuser='<%= current_user.to_json %>' />

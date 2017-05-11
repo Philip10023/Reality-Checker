@@ -1,8 +1,11 @@
+<%= link_to categories_path do %>
+<%= image_tag("logo.png", class: "menu-icon") %>
+<%end%>
 <h1> Choose the times you want reality checks sent!<h1>
-<%= form_for @timer = Timer.find(params[:id]) || Timer.new do |f| %>
+<%= form_for [@category, @timer], :url => category_timer_path(@timer), :method => :patch do |f| %>
 
-    <%= f.label :from %><br>
-    <%= f.select :rate, [ 1, 5, 12 ], :prompt => 'Select hourly rate' %>
+    <%= f.label "update!"  %><br>
+    <%= f.select :rate, [ 1, 5, 12 ], :action => :patch %>
 
     <%= f.submit %>
 <% end %>
