@@ -7,11 +7,12 @@ Rails.application.routes.draw do
       root to: 'categories#index', as: :authenticated_root
       resources :categories, only: [:index, :new, :show, :create]
       resources :realities, only: [:index, :destroy]
-
+      resources :favorites, only: [:index, :destroy]
     namespace :api do
       namespace :v1 do
         resources :categories, only: [:show]
         resources :realities, only: [:create, :update]
+        resources :favorites, only: [:create]
       end
     end
   end

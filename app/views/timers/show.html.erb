@@ -1,3 +1,6 @@
+<%= link_to categories_path do %>
+<%= image_tag("logo.png", class: "menu-icon") %>
+<%end%>
 <h1> Choose the times you want reality checks sent!<h1>
 <%= form_for [@category, @timer], :url => category_timer_path(@timer), :method => :patch do |f| %>
 

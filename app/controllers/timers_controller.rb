@@ -17,7 +17,7 @@ class TimersController < ApplicationController
   def show
     @timer = Timer.find(params[:id])
     @category = @timer.category
-    user_rate = @timer.rate
+    @user_rate = @timer.rate
   end
   def new
       @timer = Timer.new

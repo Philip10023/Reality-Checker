@@ -76,23 +76,28 @@ constructor(props) {
     }
   return (
       <div>
-        <form className="callout" onSubmit={this.handleFormSubmit}>
+        <form className="callout reactform" onSubmit={this.handleFormSubmit}>
         {errorDiv}
-          <CheckField
+        <div className="reality">
+          <CheckField className="reality"
             content={this.state.checkConsumed}
-            label='Check'
+            label='Realities'
             name='check'
+            id = "reality"
             handlerFunction={this.handleCheckChange}
           />
-          <div className="button-group">
+          </div>
+          <div className="button-group react-buttons">
             <button className="button" id="clear" onClick={this.handleClearForm}>Clear</button>
-            <input className="button" type="submit" value="Submit" />
+            <input className="button" type="submit" id="submit" value="Submit" />
           </div>
         </form>
-        <
-        ArrowContainer
-        categoryId = {this.props.categoryId}
-        checkConsumed = {this.props.checkConsumed}/>
+        <div className= "animated SlideInLeft arrow">
+          <
+          ArrowContainer
+          categoryId = {this.props.categoryId}
+          checkConsumed = {this.props.checkConsumed}/>
+        </div>
       </div>
     );
   }

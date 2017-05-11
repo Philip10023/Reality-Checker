@@ -10,6 +10,7 @@ class ArrowContainer extends Component {
       ids: [],
       id_counter: []
     }
+    this.favoriteReality=this.favoriteReality.bind(this)
     this.clickHandler=this.clickHandler.bind(this)
   }
   componentDidMount(){
@@ -25,6 +26,19 @@ class ArrowContainer extends Component {
       console.log(responseData);
     })
 }
+  favoriteReality() {
+    fetch("/api/v1/user_favorite_realities", {
+      credentials: 'same-origin',
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(this.state.reality)
+    })
+    .then(response => response.json())
+    .then(responseData => {
+      console.log(responseData);
+    })
+
+  }
 
 
   clickHandler() {
@@ -38,14 +52,16 @@ class ArrowContainer extends Component {
   render(){
       return(
         <div>
-            <div>{this.state.reality}</div>
-          <button>
-            <a href="javascript:location.reload(true)">Save your realities!</a>
-          </button>
+            <div className= "realities">{this.state.reality}</div>
         <button>
           <Arrow className="arrow"
             clickHandler={this.clickHandler}
             />
+        </button>
+
+        <div onClick={this.favoriteReality} > Save To Your Favorites! </div>
+        <button className="reload">
+        <a className="reload" href="javascript:location.reload(true)">Save your submitted realities!</a>
         </button>
         </div>
       )

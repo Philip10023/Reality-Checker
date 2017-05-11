@@ -1,0 +1,24 @@
+.categories {
+  font-family: 'Indie Flower', cursive;
+  text-align: center;
+  font-size: 60px;
+}
+.description {
+  font-family: 'Indie Flower', cursive;
+  text-align: center;
+  border-style: solid;
+  text-decoration: underline;
+}
+.email {
+  font-family: 'Indie Flower', cursive;
+  text-align: center;
+}
+.border {
+  font-family: 'Indie Flower', cursive;
+  text-align: center;
+  border-style: groove;
+}
+.title {
+  font-family: 'Indie Flower', cursive;
+  text-align: center;
+}
