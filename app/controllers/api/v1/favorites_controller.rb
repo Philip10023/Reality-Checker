@@ -6,6 +6,6 @@ skip_before_action :verify_authenticity_token, only: :create
   end
   private
   def fav_params
-    params.require(:favorite).permit(:favreality, :user_id, :reality_id)
+    params.require(:favorite).permit(:favreality, :user_id, :reality_id, :category_id)
   end
 end

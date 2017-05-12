@@ -13,6 +13,10 @@
   font-size: 30px;
 
 }
+.click:hover {
+  background-color: lightblue;
+  font-size: 35px;
+}
 .reality {
   font-family: 'Indie Flower', cursive;
   font-weight: bolder;

@@ -12,7 +12,13 @@ a:hover {
   font-family: 'Indie Flower', cursive;
 
 }
+.saveReality {
+  font-size: 15px;
+  font-weight: bolder;
+  font-family: 'Indie Flower', cursive;
+}
 
-/*.arrow{
-  background-color: #BCBCBC !important;
-}*/
+.saveReality:hover {
+  background-color: lightblue;
+  font-size: 25px;
+}

@@ -25,14 +25,14 @@
             <ul class="dropdown menu" data-dropdown-menu>
               <li><a href="/">Home</a></li>
               <% if user_signed_in? %>
-
+                <li><%= link_to "Profile", user_path(current_user.id) %></li>
                 <li><%= link_to "Add Category", new_category_path %></li>
                 <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
-                <% else %>
+              <% else %>
                 <li><%= link_to "Sign up", new_user_registration_path %></li>
                 <li><%= link_to "Log in", new_user_session_path %></li>
 
-                <% end %>
+              <% end %>
               </ul>
             </div>
             <div class="top-bar-right">

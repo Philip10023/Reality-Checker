@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :categories, only: [:index, :new, :show, :create]
       resources :realities, only: [:index, :destroy]
       resources :favorites, only: [:index, :destroy]
+      resources :users, except: [:new, :create]
     namespace :api do
       namespace :v1 do
         resources :categories, only: [:show]

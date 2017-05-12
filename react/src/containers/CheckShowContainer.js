@@ -42,7 +42,7 @@ class CheckShowContainer extends Component {
     return(
 
       <FormContainer
-      user_id = {this.props.current_user}
+       user_id = {this.state.user}
        addNewReality={this.addNewReality}
        categoryId={this.props.params.id}/>
     )
