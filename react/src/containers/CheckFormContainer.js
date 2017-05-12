@@ -95,6 +95,7 @@ constructor(props) {
         <div className= "animated SlideInLeft arrow">
           <
           ArrowContainer
+          user_id = {this.props.user}
           categoryId = {this.props.categoryId}
           checkConsumed = {this.props.checkConsumed}/>
         </div>

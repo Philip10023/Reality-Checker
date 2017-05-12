@@ -6,7 +6,6 @@ const App = (props) => {
     <Router history={browserHistory}>
       <Route path='/' >
         <Route path='/categories/:id' component={CheckShowContainer} />
-        <Route path='/user/:id' component={CheckShowContainer} />
       </Route>
     </Router>
   );

@@ -1,0 +1,36 @@
+<div class="profile-info">
+  <% if current_user.admin? === true %>
+    <h1><%= @user.username %>'s Profile (Admin) </h1>
+  <%else%>
+    <h1><%= @user.username %>'s Profile</h1>
+  <%end%>
+
+  <h3><%= @user.username %></h3>
+  <%= link_to 'Edit Your Profile', edit_user_registration_path %>
+<div class="realityloop">
+  <h4><%= @user.username %>'s favorite realities!</h4>
+  <li class="favorites-list">
+  <% Favorite.all.each do |favorite| %>
+    <% Category.all.each do |category| %>
+      <% if category.id === favorite.category_id %>
+      <% if favorite.user_id === current_user.id %>
+      <h5 class="favreality">
+        <%=favorite.favreality%>
+        <%=link_to "delete", favorite_path(favorite), method: :delete, data: { confirm: "You sure?" }%></h5>
+        || Category:  <%=category.title%>
+      <% else %>
+      <%end%>
+    <%end%>
+  <%end%>
+<%end%>
+</li>
+</div>
+  <div>
+    <% if current_user.admin? === true %>
+      <span><%= link_to 'Users', users_path %> | </span>
+      <span><%= link_to 'Realities', realities_path %> | </span>
+      <span><%= link_to 'Categories', categories_path %></span>
+    <%else%>
+  <%end%>
+  </div>
+</div>
