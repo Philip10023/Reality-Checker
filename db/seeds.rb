@@ -5,4 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-user = User.create(username: "phil", admin: true, email: "philipormorgan@gmail.com", password: "philip12")
+if Rails.env.development? || Rails.env.production?
+  CategorySeeder.seed!
+end

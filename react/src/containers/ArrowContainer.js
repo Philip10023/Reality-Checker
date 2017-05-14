@@ -71,7 +71,7 @@ class ArrowContainer extends Component {
             />
         </button>
         <button className="saveReality">
-        <div onClick={this.favoriteReality} > Save To Your Favorites! </div>
+        <div onClick={this.favoriteReality} > Save To Your Favorites!<img className="forward-button"></img> </div>
         </button>
         <button className="reload">
         <a className="reload" href="javascript:location.reload(true)">Save your submitted realities!</a>
