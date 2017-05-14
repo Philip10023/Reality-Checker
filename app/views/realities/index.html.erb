@@ -1,0 +1,15 @@
+<% if current_user.admin? %>
+<h1> Admin Edit Realties Page </h1>
+
+<li class="realities-list">
+  <% Reality.all.each do |reality| %>
+    <% Category.all.each do |category| %>
+    <% if category.id === reality.category_id %>
+      <h5 class="realities-listing">
+        <%=reality.check%>
+        <%=link_to "delete", reality_path(reality), method: :delete, data: { confirm: "You sure?" }%></h5>
+        || Category:  <%=category.title%>
+      <%end%>
+    <%end%>
+  <%end%>
+<%end%>

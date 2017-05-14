@@ -1,14 +1,28 @@
 <%= link_to categories_path do %>
 <%= image_tag("logo.png", class: "menu-icon") %>
 <%end%>
-<h2 class="category-title">Categories:</h2>
+<% if current_user.admin? %>
 <h1 class="reality-checker">Reality-Checker!</h1>
+<h2 class="category-title">Categories:</h2>
 
 
 <div class="category_header">
-  <div class="categories small-9 columns small-centered large-10">
+  <div class="categories row small-up-1 medium-up-1 large-up-3">
     <% @categories.each do |category| %>
-      <p class='animated slideInLeft categories'><%= link_to category.title, category %></p>
+    <div class="column column-block">
+    <p class='animated slideInLeft categories'><%= link_to category.title, category %>
+    <span><%=link_to "delete", category_path(category), method: :delete, data: { confirm: "You sure?" }%><span></p>
+  </div>
     <% end %>
   </div>
 </div>
+<%else%>
+<div class="category_header">
+  <div class="categories row small-up-1 medium-up-1 large-up-3">
+    <% @categories.each do |category| %>
+    <div class="column column-block">
+    <p class='animated slideInLeft categories'><%= link_to category.title, category %></p>
+  </div>
+  <%end%>
+</div>
+<%end%>
