@@ -3,6 +3,7 @@
 #
 # Examples:
 User.destroy_all
+Reality.destroy_all
 Category.destroy_all
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
@@ -10,6 +11,7 @@ Category.destroy_all
 if Rails.env.development? || Rails.env.production?
   CategorySeeder.seed!
 end
+reality = Reality.all
 category = Category.all
 user1 = User.create(email: 'philipormorgan@gmail.com', username: 'Philip', password: '123456', admin: true)
 philosophy = category[0]
