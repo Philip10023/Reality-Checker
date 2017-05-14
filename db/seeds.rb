@@ -3,7 +3,6 @@
 #
 # Examples:
 User.destroy_all
-Reality.destroy_all
 Category.destroy_all
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
