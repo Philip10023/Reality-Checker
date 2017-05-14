@@ -11,9 +11,9 @@ class RealitiesController < ApplicationController
    @reality = Reality.find(params[:id])
   end
   def destroy
-      Favorite.find(params[:id]).destroy
-      flash[:success] = "Favorite deleted"
-      redirect_to categories_path, notice: "Favorite Deleted"
+      Reality.find(params[:id]).destroy
+      flash[:success] = "Reality deleted"
+      redirect_to categories_path, notice: "Reality Deleted"
     end
 
 end
