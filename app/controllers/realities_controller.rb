@@ -15,5 +15,8 @@ class RealitiesController < ApplicationController
       flash[:success] = "Reality deleted"
       redirect_to categories_path, notice: "Reality Deleted"
     end
+    def create
+      reality = Reality.new
+    end
 
 end
