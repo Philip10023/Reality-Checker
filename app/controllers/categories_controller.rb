@@ -25,6 +25,11 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
   end
+  def destroy
+    Category.find(params[:id]).destroy
+    flash[:success] = "Category deleted"
+    redirect_to categories_path, notice: "Category Deleted"
+  end
   private
 
   def category_params
