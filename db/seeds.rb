@@ -4,14 +4,14 @@
 # Examples:
 Category.destroy_all
 User.destroy_all
-Reality.destroy_all
+ @reality = Reality.destroy_all
 #
 #   movies = Movie.create!([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create!(name: 'Luke', movie: movies.first)
 if Rails.env.development? || Rails.env.production?
   CategorySeeder.seed!
 end
-reality = Reality.all
+@reality = Reality.all
 category = Category.all
 user1 = User.create!(email: 'philipormorgan@gmail.com', username: 'Philip', password: '123456', admin: true)
 philosophy = category[0]
