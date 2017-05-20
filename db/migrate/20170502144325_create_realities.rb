@@ -4,6 +4,8 @@ class CreateRealities < ActiveRecord::Migration[5.0]
       t.string :check, null: false
       t.integer :user_id, null: false
       t.integer :category_id, null: false
+      t.belongs_to :user, null: false
+      t.belongs_to :category, null: false
 
       t.timestamps
     end
