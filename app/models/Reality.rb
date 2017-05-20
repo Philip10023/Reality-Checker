@@ -1,6 +1,6 @@
 class Reality < ApplicationRecord
-  validates :category_id, presence: true
-  validates :user_id, presence: true
+  validates :category, presence: true
+  validates :user, presence: true
 
   belongs_to :category
   belongs_to :user
