@@ -13,7 +13,7 @@ if Rails.env.development? || Rails.env.production?
 end
 reality = Reality.all!
 category = Category.all!
-user1 = User.create!!(email: 'philipormorgan@gmail.com', username: 'Philip', password: '123456', admin: true)
+user1 = User.create!(email: 'philipormorgan@gmail.com', username: 'Philip', password: '123456', admin: true)
 philosophy = category[0]
 love = category[1]
 wisdom = category[2]
