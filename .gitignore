@@ -14,8 +14,8 @@
 !/log/.keep
 !/tmp/.keep
 .DS_Store
-.env
 /.bundle
+.env
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -27,8 +27,8 @@
 /app/assets/javascripts/bundle.js
 # Ignore Byebug command history file.
 .byebug_history
-/node_modules
 # Ignore environment variables
+/node_modules
 
 
 # Ignore local uploads
