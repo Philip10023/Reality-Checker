@@ -18,7 +18,7 @@ gem 'foundation-rails'
 gem 'devise'
 gem 'cowsay'
 gem 'pg_search'
-gem 'coveralls', require: false
+ruby '2.3.3'
 
 group :development, :test do
   gem 'pry-rails'
