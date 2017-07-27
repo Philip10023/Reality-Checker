@@ -64,18 +64,17 @@ class ArrowContainer extends Component {
   render(){
       return(
         <div>
-            <div className= "realities">{this.state.reality}</div>
-        <button>
-          <Arrow className="arrow"
-            clickHandler={this.clickHandler}
-            />
-        </button>
-        <button className="saveReality">
-        <div onClick={this.favoriteReality} > Save To Your Favorites!<img className="forward-button"></img> </div>
-        </button>
-        <button className="reload">
-        <a className="reload" href="javascript:location.reload(true)">Save your submitted realities!</a>
-        </button>
+          <div className= "realities">{this.state.reality}</div>
+          <div className="button-group expanded">
+            <button  className="button">
+              <Arrow className="arrow "
+              clickHandler={this.clickHandler}
+              />
+            </button>
+            <button className="button saveReality">
+              <div className="save" onClick={this.favoriteReality} >Save To Your Favorites! </div>
+            </button>
+          </div>
         </div>
       )
     }

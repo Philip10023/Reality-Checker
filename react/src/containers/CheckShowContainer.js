@@ -45,6 +45,7 @@ class CheckShowContainer extends Component {
        user_id = {this.state.user}
        addNewReality={this.addNewReality}
        categoryId={this.props.params.id}/>
+       
     )
   }
 }

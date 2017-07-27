@@ -5,6 +5,7 @@ import App from './App';
 
 $(function() {
   ReactDOM.render(
+    
     <App />,
     document.getElementById('react')
   );

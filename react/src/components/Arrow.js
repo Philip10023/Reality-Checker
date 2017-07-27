@@ -5,7 +5,7 @@ const Arrow = (props) => {
     <div>
 
       <div className="click" onClick={props.clickHandler}>
-        <p>Receive A Reality!</p>
+        <p>Click me to see a reality!</p>
       </div>
       <div>{props.reality}</div>
     </div>

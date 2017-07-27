@@ -81,15 +81,18 @@ constructor(props) {
         <div className="reality">
           <CheckField className="reality"
             content={this.state.checkConsumed}
-            label='Realities'
+            label='Create Question Quote or Statement for the Database!'
             name='check'
             id = "reality"
             handlerFunction={this.handleCheckChange}
           />
           </div>
-          <div className="button-group react-buttons">
-            <button className="button" id="clear" onClick={this.handleClearForm}>Clear</button>
-            <input className="button" type="submit" id="submit" value="Submit" />
+          <div className="button-group expanded react-buttons">
+            <button className="button large" id="clear" onClick={this.handleClearForm}>Clear</button>
+            <input className="button large" type="submit" id="submit" value="Submit" />
+            <button className="reload success button" >
+              <a className="reload" href="javascript:location.reload(true)">Reload Realities to see yours!</a>
+            </button>
           </div>
         </form>
         <div className= "animated SlideInLeft arrow">
@@ -99,6 +102,7 @@ constructor(props) {
           categoryId = {this.props.categoryId}
           checkConsumed = {this.props.checkConsumed}/>
         </div>
+
       </div>
     );
   }

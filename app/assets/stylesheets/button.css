@@ -1,25 +1,28 @@
 .reload {
-  height: 30px;
-  color: #424242;
-  font-size: 30px;
+  font-family: 'Indie Flower', cursive;
+  text-decoration: underline;
   float: right;
 }
-a {
-  color: #424242;
-  font-size: 30px
-}
 
-a:hover {
-  font-family: 'Indie Flower', cursive;
 
-}
+
 .saveReality {
-  font-size: 15px;
-  font-weight: bolder;
   font-family: 'Indie Flower', cursive;
+  text-decoration: underline;
+  text-align: center;
+  font-size: 50px;
+  height: 137px;
 }
 
-.saveReality:hover {
-  background-color: lightblue;
-  font-size: 25px;
+.save {
+  font-size: 30px;
+}
+
+.reload {
+  font-family: 'Indie Flower', cursive;
+  text-decoration: underline;
+  float:left;
+  text-align: center;
+  font-size: 36px;
+  height: 137px;
 }

@@ -3,19 +3,9 @@
     <h1 class="title"><%= @category.title %></h1>
     <h3 class= "title">Description: <%= @category.description %></h3>
   </div>
-
-
-  <div class="border">
-    <h2 class="email"><%= @category.title %>'s email scheduler!</h2>
-    <% if @category.timers === [] %>
-    <p class="timer"><%= link_to "Timer new", new_category_timer_path(@category) %></p>
-    <% else %>
-    <p class="timer"><%= link_to "Timer", category_timer_path(@category) %></p>
-    <% end %>
-  </div>
-</div>
 <%= link_to categories_path do %>
 <%= image_tag("logo.png", class: "menu-icon") %>
 <% end %>
+<p class="border"> Scroll Down to Interact With Realities! </p>
 
 <div id="react" class="small-9 columns small-centered large-10" data-currentuser='<%= current_user.to_json %>' />
