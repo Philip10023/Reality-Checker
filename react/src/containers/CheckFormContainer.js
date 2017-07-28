@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import CheckField from '../components/CheckField'
 import ArrowContainer from './ArrowContainer'
-
+import { Form } from 'react-bootstrap'
+import { FormControl } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
+import { ButtonToolbar } from 'react-bootstrap'
 
 class FormContainer extends Component {
 constructor(props) {
@@ -76,25 +79,24 @@ constructor(props) {
     }
   return (
       <div>
-        <form className="callout reactform col-xs-2 col-sm-8 col-md-4 col-lg-12 " onSubmit={this.handleFormSubmit}>
+      <Form className="form-text reactform col-xs-2 col-sm-8 col-md-4 col-lg-12 " onSubmit={this.handleFormSubmit}>
         {errorDiv}
-        <div className="reality">
-          <CheckField className="reality"
+        <div className="reality input">
+          <CheckField className="reality input"
             content={this.state.checkConsumed}
             label='Create Question Quote or Statement for the Database!'
             name='check'
-            id = "reality"
+            type="text"
+            id="reality"
             handlerFunction={this.handleCheckChange}
           />
-          </div>
-          <div className="btn-group ">
-            <button className="btn btn-block" onClick={this.handleClearForm}>Clear</button>
-            <button className="btn btn-primary btn-block" type="submit" id="submit" value="Submit">Submit</button>
-            <button className="btn btn-warning btn-block reload" >
-              <a className="reload" href="javascript:location.reload(true)">Reload Realities!</a>
-            </button>
-          </div>
-        </form>
+        </div>
+          <ButtonToolbar className="btn-group ">
+            <Button bsStyle="default" onClick={this.handleClearForm}>Clear</Button>
+            <Button bsStyle="primary" active type="submit" value="submit">Submit</Button>
+            <a className="btn btn-warning reload" href="javascript:location.reload(true)">Reload Realities!</a>
+          </ButtonToolbar>
+        </Form>
         <div className= "animated SlideInLeft arrow">
           <
           ArrowContainer
