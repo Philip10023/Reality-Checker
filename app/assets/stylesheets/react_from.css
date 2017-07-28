@@ -6,13 +6,7 @@
   background-color: lightgrey;
 }
 
-.click {
-  font-family: 'Indie Flower', cursive;
-  text-decoration: underline;
-  text-align: center;
-  font-size: 30px;
 
-}
 
 .reality {
   font-family: 'Indie Flower', cursive;
@@ -28,21 +22,7 @@
   border-style: double;
 }
 
-#clear {
-text-align: center;
-font-weight: bolder;
-font-family: 'Indie Flower', cursive;
-font-size: 50px;
-background-color: black;
-}
 
-#submit {
-  text-align: left;
-  font-weight: bolder;
-  font-family: 'Indie Flower', cursive;
-  font-size: 50px;
-  background-color: black;
-}
 #reality {
   font-weight: bolder;
   font-family: 'Indie Flower', cursive;

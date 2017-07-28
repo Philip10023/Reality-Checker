@@ -76,7 +76,7 @@ constructor(props) {
     }
   return (
       <div>
-        <form className="callout reactform" onSubmit={this.handleFormSubmit}>
+        <form className="callout reactform col-xs-2 col-sm-8 col-md-4 col-lg-12 " onSubmit={this.handleFormSubmit}>
         {errorDiv}
         <div className="reality">
           <CheckField className="reality"
@@ -87,11 +87,11 @@ constructor(props) {
             handlerFunction={this.handleCheckChange}
           />
           </div>
-          <div className="button-group expanded react-buttons">
-            <button className="button large" id="clear" onClick={this.handleClearForm}>Clear</button>
-            <input className="button large" type="submit" id="submit" value="Submit" />
-            <button className="reload success button" >
-              <a className="reload" href="javascript:location.reload(true)">Reload Realities to see yours!</a>
+          <div className="btn-group ">
+            <button className="btn btn-block" onClick={this.handleClearForm}>Clear</button>
+            <button className="btn btn-primary btn-block" type="submit" id="submit" value="Submit">Submit</button>
+            <button className="btn btn-warning btn-block reload" >
+              <a className="reload" href="javascript:location.reload(true)">Reload Realities!</a>
             </button>
           </div>
         </form>

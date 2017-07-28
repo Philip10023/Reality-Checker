@@ -1,7 +1,8 @@
 .categories {
   font-family: 'Indie Flower', cursive;
   text-align: center;
-  font-size: 40px;
+  font-size: 30px;
+
 }
 .description {
   font-family: 'Indie Flower', cursive;
@@ -21,4 +22,8 @@
 .title {
   font-family: 'Indie Flower', cursive;
   text-align: center;
+}
+
+.navbar-toggler, .navbar-toggler-right {
+  background-color: grey;
 }

@@ -1,28 +1,24 @@
 <%= link_to categories_path do %>
 <%= image_tag("logo.png", class: "menu-icon") %>
 <%end%>
-<% if current_user.admin? %>
-<h1 class="reality-checker">Reality-Checker!</h1>
-<h2 class="category-title">Categories:</h2>
+  <h1 class="reality-checker">Reality-Checker!</h1>
+  <h2 class="category-title">Categories:</h2>
+  <% @categories.each do |category| %>
+  <% if current_user.admin? %>
 
 
-<div class="category_header">
-  <div class="categories row small-up-1 medium-up-1 large-up-3">
-    <% @categories.each do |category| %>
-    <div class="column column-block">
-    <p class='animated slideInLeft categories'><%= link_to category.title, category %>
-    <span><%=link_to "delete", category_path(category), method: :delete, data: { confirm: "You sure?" }%><span></p>
+  <div class="category_header col-sm-2 col-md-4 col-lg-12">
+    <ol class="categories col-sm-2 col-md-4 col-lg-12">
+      <div class='animated slideInLeft'><%= link_to category.title, category %> |
+      <%=link_to "delete", category_path(category), method: :delete, data: { confirm: "You sure?" }%></div>
+    </ol>
   </div>
-    <% end %>
+  <%else%>
+  <div class="category_header">
+    <ul class="categories col-sm-2 col-md-4 col-lg-12">
+
+      <li class='animated slideInLeft categories'><%= link_to category.title, category %></li>
+    </ul>
+    <%end%>
   </div>
-</div>
-<%else%>
-<div class="category_header">
-  <div class="categories row small-up-1 medium-up-1 large-up-3">
-    <% @categories.each do |category| %>
-    <div class="column column-block">
-    <p class='animated slideInLeft categories'><%= link_to category.title, category %></p>
-  </div>
-  <%end%>
-</div>
 <%end%>
