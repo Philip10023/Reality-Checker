@@ -71,7 +71,7 @@ class ArrowContainer extends Component {
               clickHandler={this.clickHandler}
               />
             </button>
-            <button className="btn-warning ">
+            <button className="btn-warning btn">
               <div className="save" onClick={this.favoriteReality} >Save To Your Favorites! </div>
             </button>
           </div>

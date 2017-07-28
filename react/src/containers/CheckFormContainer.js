@@ -78,8 +78,8 @@ constructor(props) {
       errorDiv = <div className="callout alert">{errorItems}</div>
     }
   return (
-      <div>
-      <Form className="form-text reactform col-xs-2 col-sm-8 col-md-4 col-lg-12 " onSubmit={this.handleFormSubmit}>
+      <div className="form-control">
+      <Form className="form-text reactform col-xs-2 col-sm-9 col-md-12 col-lg-12 text-center" onSubmit={this.handleFormSubmit}>
         {errorDiv}
         <div className="reality input">
           <CheckField className="reality input"
