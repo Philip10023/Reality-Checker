@@ -2,7 +2,7 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-  <div class="form-group col-sm-6 col-xs-7 col-lg-3 col-md-4">
+  <div class="form-group col-sm-6 col-xs-7 col-lg-3 col-md-4 col-offset-6 centered container">
     <div class=" form-control ">
       <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true %>
@@ -26,11 +26,9 @@
       <%= f.password_field :password_confirmation, autocomplete: "off" %>
     </div>
 
-    <div class=" btn">
-      <%= f.submit "Sign up" %>
-    </div>
-    <div class="btn">
-      <%= render "devise/shared/links" %>
+    <button type="submit" class="btn btn-primary">Sign up!</button>
+    <div class="btn btn-warning">
+      <%= render "devise/shared/links" %>already have an account?
     </div>
 </div>
 <% end %>
